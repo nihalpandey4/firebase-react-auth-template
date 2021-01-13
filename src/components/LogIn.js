@@ -1,6 +1,6 @@
 import React,{useRef,useState} from "react"
 import {Card,Form,Button,Alert} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Link,useHistory} from "react-router-dom";
 
 import {useAuth} from "../contexts/AuthContext";
 
@@ -9,12 +9,14 @@ const LogIn  = () =>{
     const emailRef = useRef();
     const passwordRef = useRef();
     const {logIn} = useAuth()
+    const history = useHistory()
 
     const handleSubmit=async(e)=>{
         e.preventDefault();
         try{
             await logIn(emailRef.current.value,passwordRef.current.value);
             setError("")
+            history.push("/");
         }
         catch(error){
             setError(error.message)
@@ -41,7 +43,7 @@ const LogIn  = () =>{
                 </Card.Body>
             </Card>
             <div className="text-center w-100 mt-3">
-                    Need an account?<Link to="/signup"> Sign up</Link>
+                Need an account?<Link to="/signup"> Sign up</Link>
             </div>
         </>
     )

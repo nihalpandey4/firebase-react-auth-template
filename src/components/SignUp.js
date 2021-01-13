@@ -1,6 +1,6 @@
 import React,{useRef,useState} from "react"
 import {Card,Form,Button,Alert} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Link,useHistory} from "react-router-dom";
 
 import {useAuth} from "../contexts/AuthContext";
 
@@ -10,7 +10,7 @@ const SignUp  = () =>{
     const passwordRef = useRef();
     const confirmPasswordRef = useRef();
     const {signUp} = useAuth()
-
+    const history = useHistory();
     const handleSubmit=async(e)=>{
         e.preventDefault();
         if(passwordRef.current.value!==confirmPasswordRef.current.value){
@@ -20,6 +20,7 @@ const SignUp  = () =>{
         try{
             await signUp(emailRef.current.value,passwordRef.current.value);
             setError("")
+            history.push("/")
         }
         catch(error){
             setError(error.message)
