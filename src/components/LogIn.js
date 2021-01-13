@@ -16,8 +16,8 @@ const LogIn  = () =>{
             await logIn(emailRef.current.value,passwordRef.current.value);
             setError("")
         }
-        catch{
-            setError("Failed to Log In the user")
+        catch(error){
+            setError(error.message)
         }
     }
 
@@ -25,7 +25,7 @@ const LogIn  = () =>{
         <>
             <Card>
                 <Card.Body>
-                    <h2 className="text-center mb-4">Sign Up</h2>
+                    <h2 className="text-center mb-4">Log In</h2>
                     {error&&<Alert variant="danger">{error}</Alert>}
                     <Form onSubmit={handleSubmit}>
                         <Form.Group>
@@ -36,19 +36,15 @@ const LogIn  = () =>{
                             <Form.Label>New Password : </Form.Label>
                             <Form.Control type="password" placeholder="Enter password" ref= {passwordRef} />
                         </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Confirm Password : </Form.Label>
-                            <Form.Control type="password" placeholder="Confirm password" ref= {confirmPasswordRef} />
-                        </Form.Group>
-                        <Button type="submit" className="w-100">Submit</Button>
+                        <Button type="submit" className="w-100">Log In</Button>
                     </Form>
                 </Card.Body>
             </Card>
             <div className="text-center w-100 mt-3">
-                    Already have an account?<Link to="/login"> Log In </Link>
+                    Need an account?<Link to="/signup"> Sign up</Link>
             </div>
         </>
     )
 }
 
-export default SignUp;
+export default LogIn;

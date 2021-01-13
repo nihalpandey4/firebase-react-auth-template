@@ -1,8 +1,9 @@
 import { Container } from "react-bootstrap";
+import { Route, BrowserRouter, Switch } from "react-router-dom";
 
 import SignUp from "./SignUp";
 import { AuthProvider } from "../contexts/AuthContext";
-import { Route, BrowserRouter, Switch } from "react-router-dom";
+import LogIn from "./LogIn";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Switch>
             <AuthProvider>
               <Route path="/signup" component={SignUp}/>
+              <Route path="/login" component={LogIn}/>
             </AuthProvider>
           </Switch>
         </BrowserRouter>
