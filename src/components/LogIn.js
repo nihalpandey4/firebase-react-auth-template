@@ -4,25 +4,20 @@ import {Link} from "react-router-dom";
 
 import {useAuth} from "../contexts/AuthContext";
 
-const SignUp  = () =>{
+const LogIn  = () =>{
     const [error,setError] = useState();
     const emailRef = useRef();
     const passwordRef = useRef();
-    const confirmPasswordRef = useRef();
-    const {signUp} = useAuth()
+    const {logIn} = useAuth()
 
     const handleSubmit=async(e)=>{
         e.preventDefault();
-        if(passwordRef.current.value!==confirmPasswordRef.current.value){
-            setError("Passwords do not match");
-            return ;
-        }
         try{
-            await signUp(emailRef.current.value,passwordRef.current.value);
+            await logIn(emailRef.current.value,passwordRef.current.value);
             setError("")
         }
         catch{
-            setError("Failed to sign up")
+            setError("Failed to Log In the user")
         }
     }
 
