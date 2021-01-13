@@ -15,7 +15,6 @@ const LogIn  = () =>{
         e.preventDefault();
         try{
             await logIn(emailRef.current.value,passwordRef.current.value);
-            setError("")
             history.push("/");
         }
         catch(error){
@@ -35,7 +34,7 @@ const LogIn  = () =>{
                             <Form.Control type="email" placeholder="Enter Email" ref= {emailRef} />
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label>New Password : </Form.Label>
+                            <Form.Label>Password : </Form.Label>
                             <Form.Control type="password" placeholder="Enter password" ref= {passwordRef} />
                         </Form.Group>
                         <Button type="submit" className="w-100">Log In</Button>

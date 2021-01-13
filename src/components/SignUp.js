@@ -19,7 +19,6 @@ const SignUp  = () =>{
         }
         try{
             await signUp(emailRef.current.value,passwordRef.current.value);
-            setError("")
             history.push("/")
         }
         catch(error){
