@@ -1,23 +1,24 @@
-import React, { useRef, useState } from "react";
+import React,{useState,useRef} from "react";
 import { Card, Form, Button, Alert } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 import { useAuth } from "../contexts/AuthContext";
 
-const LogIn = () => {
-  const [error, setError] = useState();
+const ForgotPassword = () => {
+  const [successMessage, setSuccessMessage] = useState();
+  const [errorMessage, setErrorMessage] = useState();
   const emailRef = useRef();
-  const passwordRef = useRef();
-  const { logIn } = useAuth();
-  const history = useHistory();
+  const { resetPassword } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await logIn(emailRef.current.value, passwordRef.current.value);
-      history.push("/");
+      await resetPassword(emailRef.current.value);
+      setSuccessMessage("Reset link sent to your Email");
+      setErrorMessage();
     } catch (error) {
-      setError(error.message);
+      setSuccessMessage();
+      setErrorMessage(error.message);
     }
   };
 
@@ -25,8 +26,9 @@ const LogIn = () => {
     <>
       <Card>
         <Card.Body>
-          <h2 className="text-center mb-4">Log In</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
+          <h2 className="text-center mb-4">Reset Password</h2>
+          {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
+          {successMessage && <Alert variant="success">{successMessage}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group>
               <Form.Label>Email Address : </Form.Label>
@@ -36,20 +38,12 @@ const LogIn = () => {
                 ref={emailRef}
               />
             </Form.Group>
-            <Form.Group>
-              <Form.Label>Password : </Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Enter password"
-                ref={passwordRef}
-              />
-            </Form.Group>
             <Button type="submit" className="w-100">
-              Log In
+              Send Link
             </Button>
           </Form>
           <div className="text-center w-100 mt-4">
-            <Link to="/forgot-password">Forgot Password?</Link>
+            Go back to <Link to="/login">Log In</Link>
           </div>
         </Card.Body>
       </Card>
@@ -60,4 +54,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default ForgotPassword;

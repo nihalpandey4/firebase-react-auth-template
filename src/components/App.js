@@ -6,6 +6,7 @@ import { AuthProvider } from "../contexts/AuthContext";
 import LogIn from "./LogIn";
 import Dashboard from "./Dashboard";
 import PrivateRoute from "./PrivateRoute"
+import ForgotPassword from "./ForgotPassword";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
               <PrivateRoute path="/" exact component={Dashboard} />
               <Route path="/signup" component={SignUp} />
               <Route path="/login" component={LogIn} />
+              <Route path="/forgot-password" component={ForgotPassword} />
             </Switch>
           </AuthProvider>
         </BrowserRouter>
