@@ -34,6 +34,7 @@ const LogIn = () => {
                 type="email"
                 placeholder="Enter Email"
                 ref={emailRef}
+                required={true}
               />
             </Form.Group>
             <Form.Group>
@@ -42,6 +43,7 @@ const LogIn = () => {
                 type="password"
                 placeholder="Enter password"
                 ref={passwordRef}
+                required={true}
               />
             </Form.Group>
             <Button type="submit" className="w-100">

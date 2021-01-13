@@ -10,7 +10,7 @@ export const useAuth =()=>{
 
 export const AuthProvider=({children})=>{
     const [currentUser,setCurrentUser]  = useState()
-    const [loading,setLoading] = useState()
+    const [loading,setLoading] = useState(true)
 
     const signUp =(email,password)=>{
         return auth.createUserWithEmailAndPassword(email,password);
@@ -27,12 +27,20 @@ export const AuthProvider=({children})=>{
     const resetPassword = (email)=>{
         return auth.sendPasswordResetEmail(email);
     }
+    
+    const updateEmail = (email)=>{
+        return currentUser.updateEmail(email)
+    }
+    
+    const updatePassword = (password)=>{
+        return currentUser.updatePassword(password)
+    }
 
     useEffect(() =>{
-        setLoading(true)
         const unSubscribe = auth.onAuthStateChanged(user=>{
             setCurrentUser(user)
             setLoading(false)
+            
         })
         return unSubscribe;
     },[])
@@ -43,6 +51,8 @@ export const AuthProvider=({children})=>{
         logIn,
         logout,
         resetPassword,
+        updateEmail,
+        updatePassword
     }
 
     return (

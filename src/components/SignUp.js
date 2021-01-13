@@ -35,15 +35,15 @@ const SignUp  = () =>{
                     <Form onSubmit={handleSubmit}>
                         <Form.Group>
                             <Form.Label>Email Address : </Form.Label>
-                            <Form.Control type="email" placeholder="Enter Email" ref= {emailRef} />
+                            <Form.Control type="email" placeholder="Enter Email" ref= {emailRef} required={true} />
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>New Password : </Form.Label>
-                            <Form.Control type="password" placeholder="Enter password" ref= {passwordRef} />
+                            <Form.Control type="password" placeholder="Enter password" ref= {passwordRef} required={true} />
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Confirm Password : </Form.Label>
-                            <Form.Control type="password" placeholder="Confirm password" ref= {confirmPasswordRef} />
+                            <Form.Control type="password" placeholder="Confirm password" ref= {confirmPasswordRef}required={true} />
                         </Form.Group>
                         <Button type="submit" className="w-100">Submit</Button>
                     </Form>

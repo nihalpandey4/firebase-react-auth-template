@@ -36,6 +36,7 @@ const ForgotPassword = () => {
                 type="email"
                 placeholder="Enter Email"
                 ref={emailRef}
+                required={true}
               />
             </Form.Group>
             <Button type="submit" className="w-100">
