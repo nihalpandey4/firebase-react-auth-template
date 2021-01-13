@@ -1,7 +1,8 @@
 import React,{useRef,useState} from "react"
 import {Card,Form,Button,Alert} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
-import {useAuth} from "../contexts/AuthContext"
+import {useAuth} from "../contexts/AuthContext";
 
 const SignUp  = () =>{
     const [error,setError] = useState();
@@ -49,7 +50,7 @@ const SignUp  = () =>{
                 </Card.Body>
             </Card>
             <div className="text-center w-100 mt-3">
-                    Already have an account? Log In
+                    Already have an account?<Link to="/login"> Log In </Link>
             </div>
         </>
     )
