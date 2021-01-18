@@ -1,70 +1,156 @@
-# Getting Started with Create React App
+<!-- PROJECT SHIELDS -->
+[![Stargazers][stars-shield]][stars-url]
+[![Forks][forks-shield]][forks-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<hr>
+<p>
+  <p align="center">
+    <h1>React-Firebase Authentication Template using Context for state management</h1>
+    <a href="https://github.com/nihalpandey4/Live_Video_Broadcasting_Service/issues">Report Bug</a>
+    </p>
+</p>
 
-## Available Scripts
+<hr>
 
-In the project directory, you can run:
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
-### `npm start`
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Trying out](#trying-out)
+* [Usage](#usage)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<hr>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project is a template for authentication using Firebase in React Applications. Supported functionalities are -
+<ol>
+    <li> Sign Up using E-mail and password</li>
+    <li> Log in using E-mail and password</li>
+    <li> Password reset using E-mail </li>  
+    <li> Change credentials </li>
+</ol>
 
-### `npm run build`
+<hr>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Built with
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* [Node.js](https://nodejs.org/en/)
+* [React.js](https://reactjs.org/)
+* [Context - React](https://reactjs.org/docs/context.html)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<hr>
 
-### `npm run eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Prerequisites
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Node.js v12 or later**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Run <code> node -v </code> in terminal to check version of node installed. 
+If node.js is not installed or version is lower than 12, follow [this](https://nodejs.org/en/download/) link to download the LTS version.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+2. **Git**
 
-## Learn More
+You can download the latest version of <code>git</code> [here](https://git-scm.com/downloads).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone the repo
 
-### Code Splitting
+```sh
+git clone git@github.com:nihalpandey4/firebase-react-auth-template.git
+```
+2. Install the dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```sh
+cd firebase-react-auth-template/
+npm install
+```
 
-### Analyzing the Bundle Size
+<hr>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Trying out
 
-### Making a Progressive Web App
+1. Start a new terminal to run the React App.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```sh
+cd firebase-react-auth-template
+npm start
+```
 
-### Advanced Configuration
+After executing above commands your React App is running at localhost:3000.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+4. Now go to localhost:3000 using any browser to access this application. 
 
-### Deployment
+5. Now try interacting with the form in the browser to test above mentioned features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<hr>
 
-### `npm run build` fails to minify
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Go to https://console.firebase.google.com/u/0/
+
+2. Create new Project
+
+3. Add web application to your project and store properties of firebaseConfig object in .env.local as
+
+    REACT_APP_API_KEY=apiKey <br>
+    REACT_APP_AUTH_DOMAIN = authDomain <br>
+    REACT_APP_PROJECT_ID = projectId <br>
+    REACT_APP_STORAGE_BUCKET = storageBucket <br>
+    REACT_APP_MESSAGING_SENDER_ID = messagingSenderId <br>
+    REACT_APP_APP_ID = appId <br>
+
+<hr>
+
+<!-- ROADMAP -->
+## Roadmap
+
+See the [open issues](https://github.com/nihalpandey4/firebase-react-auth-template/issues) for a list of proposed features (and known issues).
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<!-- CONTACT -->
+## Contact
+
+Nihal Pandey : nihalpandey4@gmail.com
+
+<hr>
+
+For information regarding project created with create-react-app refer to [create-react-app.md](https://github.com/nihalpandey4/firebase-react-auth-template/blob/main/create-react-app.md)
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[issues-shield]:	https://img.shields.io/github/issues/nihalpandey4/firebase-react-auth-template
+[issues-url]: https://github.com/nihalpandey4/firebase-react-auth-template/issues
+[forks-shield]: https://img.shields.io/github/forks/nihalpandey4/firebase-react-auth-template
+[forks-url]: https://github.com/nihalpandey4/firebase-react-auth-template/network/members
+[stars-shield]: https://img.shields.io/github/stars/nihalpandey4/firebase-react-auth-template
+[stars-url]: https://github.com/nihalpandey4/firebase-react-auth-template/stargazers
+[license-shield]: https://img.shields.io/github/license/nihalpandey4/firebase-react-auth-template
+[license-url]: https://github.com/nihalpandey4/firebase-react-auth-template/blob/main/LICENSE
