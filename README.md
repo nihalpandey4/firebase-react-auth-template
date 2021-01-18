@@ -152,5 +152,5 @@ For information regarding project created with create-react-app refer to [create
 [forks-url]: https://github.com/nihalpandey4/firebase-react-auth-template/network/members
 [stars-shield]: https://img.shields.io/github/stars/nihalpandey4/firebase-react-auth-template
 [stars-url]: https://github.com/nihalpandey4/firebase-react-auth-template/stargazers
-[license-shield]: https://img.shields.io/github/license/nihalpandey4/Live_Video_Broadcasting_Service
+[license-shield]: https://img.shields.io/github/license/nihalpandey4/firebase-react-auth-template
 [license-url]: https://github.com/nihalpandey4/firebase-react-auth-template/blob/main/LICENSE
