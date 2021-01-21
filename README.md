@@ -8,6 +8,7 @@
   <p align="center">
     <h1>React-Firebase Authentication Template using Context for state management</h1>
     Link to try out  - https://auth-fir.herokuapp.com/
+    <br>
     <a href="https://github.com/nihalpandey4/Live_Video_Broadcasting_Service/issues">Report Bug</a>
     </p>
 </p>
